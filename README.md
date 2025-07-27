@@ -6,7 +6,7 @@ HackForge is a MERN‑stack coding platform designed to help developers improve 
 
 ---
 
-## ✨ Key Features
+## Key Features
 - Solve DSA problems with topic-wise categorization & difficulty levels
 - Track progress, past submissions, bookmarks, and custom sprints
 - AI tutor for hints & complexity guidance
@@ -17,20 +17,20 @@ HackForge is a MERN‑stack coding platform designed to help developers improve 
 
 ---
 
-## 🏗️ Tech Stack
+## Tech Stack
 **Frontend:** React, Vite, TailwindCSS, Redux, Monaco Editor  
 **Backend:** Node.js, Express, MongoDB, Redis  
 **Integrations:** Judge0 API, Cloudinary, Google GenAI SDK, OAuth
 
 ---
 
-## 📖 Documentation
+## Documentation
 For detailed system design, APIs, and database schema:  
 👉 [View the Full Documentation on Notion](https://www.notion.so/your-notion-link)
 
 ---
 
-## 🚀 Future Scope
+## Future Scope
 - Contests & live competitions
 - Collaborative coding rooms
 - Personalized AI recommendations
