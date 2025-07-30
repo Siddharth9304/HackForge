@@ -65,6 +65,7 @@ import SprintsQuickAccess from "./problemsPage/SprintsQuickAccess";
 import ProblemGrid from "./problemsPage/ProblemGrid";
 import ProblemsPageCard from "./problemsPage/ProblemsPageCard";
 import UserProblemsQuickAccess from "./problemsPage/UserProblemsQuickAccess";
+import AdsenseAd from "./shared/AdsenseAd";
 
 export { 
     Navbar, 
@@ -132,5 +133,6 @@ export {
     SprintsQuickAccess,
     ProblemGrid,
     ProblemsPageCard,
-    UserProblemsQuickAccess
+    UserProblemsQuickAccess,
+    AdsenseAd
 };

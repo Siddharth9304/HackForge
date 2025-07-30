@@ -30,7 +30,7 @@ const sendVerificationEmail = async (req, res) => {
         });
 
         await transporter.sendMail({
-            from: '"My App" <your_email@gmail.com>',
+            from: '"HackForge" <your_email@gmail.com>',
             to: req.user.emailId,
             subject: "Verify Your Email",
             html: `<h3>Hello ${req.user.username},</h3>

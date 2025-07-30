@@ -1,11 +1,10 @@
 const validator = require("validator");
 const CustomError = require("../utils/CustomError");
-const mongoose = require("mongoose");
 
 const validateDetails = {
 
     //  to validate login details
-    login: async (loginDetails) => {
+    login: (loginDetails) => {
 
         const {emailId, password} = loginDetails;
 
@@ -17,7 +16,7 @@ const validateDetails = {
     },
 
     // to validate registeration details
-    register: async (registerationDetails) => {
+    register: (registerationDetails) => {
 
         const {username, emailId, password} = registerationDetails;
 
@@ -32,7 +31,7 @@ const validateDetails = {
     },
 
     // to validate problem details
-    problem: async (problemDetails) => {
+    problem: (problemDetails) => {
         const mandatoryFields = [ "title", "description", "difficulty", "starterCode", "visibleTestCases", "hiddenTestCases", "referenceSolution", "problemCreator"];
         const givenFields = Object.keys(problemDetails);
 

@@ -1,5 +1,13 @@
 const judge0 = require("../../judge0/judge0");
 
+const createFullUserSolution = (userSolution, language, starterCode) => {
+    const sc = starterCode.find((sc) => sc.language === language);
+
+    const fullUserSolution = (sc.headerCode || "") + "\n" + userSolution + "\n" + (sc.mainCode || "") 
+
+    return fullUserSolution;
+}
+
 const runProblem = async (req, res) => {
 
     try {
@@ -12,12 +20,10 @@ const runProblem = async (req, res) => {
         if(!userSolution || !language)
             return res.status(400).send("Missing required fields");  
 
-        console.log("hello")
+        const fullUserSolution = createFullUserSolution(userSolution, language, problem.starterCode);
 
         // checking user solution, if user solution is satisfying the visible test cases or not
-        const runTestResult = await judge0.runUserSolution(userSolution, language, problem.visibleTestCases);
-
-        console.log("bye")
+        const runTestResult = await judge0.runUserSolution(fullUserSolution, language, problem.visibleTestCases);
 
         res.status(200).json(runTestResult);
 

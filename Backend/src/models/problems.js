@@ -64,6 +64,7 @@ const problemSchema = new Schema({
                 "recursion",
                 "design",
                 "math",
+                "prefix-sum",
                 "other"
             ],
             required: true,
@@ -90,7 +91,33 @@ const problemSchema = new Schema({
                 required: true,
                 trim: true
             },
+            headerCode: {
+                type: String,
+                trim: true
+            },
             code: {
+                type: String,
+                required: true,
+                trim: true
+            },
+            mainCode: {
+                type: String,
+                trim: true
+            }
+        }
+    ],
+    examples: [
+        {
+            input: {
+                type: String,
+                required: true,
+                trim: true
+            },
+            output: {
+                type: String,
+                trim: true
+            },
+            explanation: {
                 type: String,
                 required: true,
                 trim: true
@@ -107,15 +134,6 @@ const problemSchema = new Schema({
             output: {
                 type: String,
                 trim: true
-            },
-            target: {
-                type: String,
-                trim: true
-            },
-            explanation: {
-                type: String,
-                required: true,
-                trim: true
             }
         }
     ],
@@ -129,17 +147,14 @@ const problemSchema = new Schema({
             output: {
                 type: String,
                 trim: true
-            },
-            target: {
-                type: String,
-                trim: true
-            },
+            }
         }
     ],
     referenceSolution: [
         {
             language: {
                 type: String,
+                enum: ["c", "cpp", "java", "python", "javascript"],
                 required: true,
                 trim: true
             },

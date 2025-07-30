@@ -1,6 +1,6 @@
 import './App.css'
 import { Routes, Route } from "react-router";
-import { HomePage, SignupPage, LoginPage, LogoutPage, LoadingPage, ProblemsPage, SolveProblemPage, AccountPage, VerifyEmailPage, CoursesPage, CourseOverviewPage, CourseContentPage, ProfilePage, AdminPortal, LeaderboardPage, MyProblemsPage, MySprintsPage, PremiumPage, ContestsPage, PremiumCheckoutPage } from "./pages";
+import { HomePage, SignupPage, LoginPage, LogoutPage, LoadingPage, ProblemsPage, SolveProblemPage, AccountPage, VerifyEmailPage, CoursesPage, CourseOverviewPage, CourseContentPage, ProfilePage, AdminPortal, LeaderboardPage, MyProblemsPage, MySprintsPage, PremiumPage, ContestsPage, PremiumCheckoutPage, PrivacyPolicyPage, AboutUsPage, ContactPage } from "./pages";
 import { authenticateUser } from './slices/authSlice';
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState, useCallback } from 'react';
@@ -10,7 +10,7 @@ import { Toaster } from 'react-hot-toast';
 import { AllRecentSubmissionsPage, Dashboard, ProblemManager, CreateProblem, UpdateProblem, CreateUser, UserManager, UpdateUser, VideoSolutionManager, UploadVideoSolution, SprintDetail } from './components';
 
 function App() {
-  const [darkTheme, setDarkTheme] = useState(localStorage.getItem("theme")==="dark");
+  const [darkTheme, setDarkTheme] = useState(localStorage.getItem("theme") || "dark");
   const { loading, isAuthenticated } = useSelector(state => state.authSlice);
   const dispatch = useDispatch();
   
@@ -42,6 +42,9 @@ function App() {
             <Route path="/leaderboard" element={ isAuthenticated ? <LeaderboardPage /> : <Navigate to="/login" /> }/>
             <Route path="/contests" element={ isAuthenticated ? <ContestsPage /> : <Navigate to="/login" /> }/>
             <Route path="/my-problems/:activeTab" element={ isAuthenticated ? <MyProblemsPage /> : <Navigate to="/login" /> }/>
+            <Route path="/privacy-policy" element={ <PrivacyPolicyPage /> }/>
+            <Route path="/about-us" element={ <AboutUsPage /> }/>
+            <Route path="/contact-us" element={ <ContactPage /> }/>
             <Route path="/my-sprints" element={ isAuthenticated ? <MySprintsPage /> : <Navigate to="/login" /> }>
               <Route path=":sprintName" element={<SprintDetail />} />
             </Route>

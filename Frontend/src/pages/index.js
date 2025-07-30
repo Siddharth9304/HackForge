@@ -21,6 +21,10 @@ import MySprintsPage from "./MySprintsPage";
 import PremiumPage from "./PremiumPage";
 import ContestsPage from "./ContestsPage";
 import PremiumCheckoutPage from "./PremiumCheckoutPage";
+import PrivacyPolicyPage from "./PrivacyPolicyPage";
+import AboutUsPage from "./AboutUsPage";
+import ContactPage from "./ContactPage";
+
 
 export { 
     HomePage, 
@@ -45,6 +49,9 @@ export {
     MySprintsPage,
     PremiumPage,
     ContestsPage,
-    PremiumCheckoutPage
+    PremiumCheckoutPage,
+    PrivacyPolicyPage,
+    AboutUsPage,
+    ContactPage
 };
 

@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { topicsData, statuses, difficulties } from '../utils/constants';
-import { ProblemFilters, ProblemList, Navbar, Footer, UserStats, SprintsQuickAccess, ProblemGrid, UserProblemsQuickAccess } from '../components';
+import { ProblemFilters, ProblemList, Navbar, Footer, UserStats, SprintsQuickAccess, ProblemGrid, UserProblemsQuickAccess, AdsenseAd } from '../components';
 import axiosClient from "../config/axios";
 import { useParams, Outlet } from 'react-router';
 import { mapAllProblems, generateDifficultyOptionsWithCounts, generateStatusOptionsWithCounts, generateTopicOptionsWithCounts } from "../utils/heplerFunctions";
@@ -197,6 +197,7 @@ const ProblemsPage = ({ darkTheme, handleThemeChange }) => {
                   />
                   <SprintsQuickAccess sprints={userSprints} />
                   <UserProblemsQuickAccess userProblems={userProblems} />
+                  <AdsenseAd adSlot={"1870408803"}/>
                 </>
               )}
             </aside>

@@ -11,7 +11,7 @@ import SettingsPopover from "./SettingsPopover";
 
 
 // available languages
-const availableLanguages = ['C++', 'C', 'Java', 'Python', 'Javascript'];
+const availableLanguages = ['C++', 'Python', 'Java', 'Javascript'];
 
 // to get initial code for a selected language
 const getStarterCode = (starterCodes, selectedLanguage) => {
@@ -25,7 +25,7 @@ const getStarterCode = (starterCodes, selectedLanguage) => {
 const commonIconButtonClass = "p-1 rounded hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-600 dark:text-slate-300 hover:text-gray-800 dark:hover:text-slate-100";
 
 // to store code for different languages
-const codes = {}
+let codes = {}
 
 
 const RightPanel = ({problem, problems, setProblems, showSubmissionResult, setShowSubmissionResult, submissionResult, setSubmissionResult, code, setCode, darkTheme, isTimerRunning, setIsTimerRunning }) => {
@@ -46,10 +46,10 @@ const RightPanel = ({problem, problems, setProblems, showSubmissionResult, setSh
   const [editorHeight, setEditorHeight] = useState(null); // Use null for initial flexible height
   const resizableContainerRef = useRef(null); // Ref for the container of resizable panels
 
-  const handleMouseDown = useCallback((e) => {
-    e.preventDefault();
-    setIsDragging(true);
-  }, []);
+  // const handleMouseDown = useCallback((e) => {
+  //   e.preventDefault();
+  //   setIsDragging(true);
+  // }, []);
 
   const handleMouseUp = useCallback(() => {
     setIsDragging(false);
@@ -104,10 +104,14 @@ const RightPanel = ({problem, problems, setProblems, showSubmissionResult, setSh
   };
 
   useEffect(() => {
+    codes = {};
+  }, [problem._id]);
+
+  useEffect(() => {
     if(codes[selectedLanguage])
       setCode(codes[selectedLanguage]);
     else
-      setCode(getStarterCode(problem.starterCode, selectedLanguage));
+      setCode("\n" + getStarterCode(problem.starterCode, selectedLanguage));
   }, [selectedLanguage]);
 
   const handleCodeChange = useCallback((value) => {
@@ -173,7 +177,7 @@ const RightPanel = ({problem, problems, setProblems, showSubmissionResult, setSh
   }
 
   const handleRefreshCodeButton = () => {
-    setCode(getStarterCode(problem.starterCode, selectedLanguage));
+    setCode("\n" + getStarterCode(problem.starterCode, selectedLanguage));
   }
 
   return (

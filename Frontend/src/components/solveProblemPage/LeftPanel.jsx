@@ -17,6 +17,7 @@ import BookmarkModal from './BookmarkModal';
 import parse from "html-react-parser";
 import { Heart, Star, Share2, Bot, NotepadText, BookOpenCheck, Lightbulb, FileCheck, Bookmark, BookmarkCheck,  Tag, Lock, List, Sparkles } from 'lucide-react';
 import { NavLink } from 'react-router';
+import AdsenseAd from '../shared/AdsenseAd';
 
 const tabsConfig = [
   { name: 'Description', icon: NotepadText },
@@ -119,7 +120,7 @@ const LeftPanel = ({ problem, submissionResult, showSubmissionResult, setShowSub
                     </div>
 
                     <div className='mb-12'>        
-                        {problem.visibleTestCases?.map((testCases, index)=>{
+                        {problem.examples?.map((testCases, index)=>{
                           return (
                             <div className="mt-4" key={`case${index+1}`}>
                               <p className='pl-2 mb-1.5'><strong>{`Example ${index+1}:`}</strong></p>
@@ -183,6 +184,7 @@ const LeftPanel = ({ problem, submissionResult, showSubmissionResult, setShowSub
                             ))}
                           </ul>
                         </CollapsibleSection>
+                        <AdsenseAd adSlot={"7446670121"}/>
                       </div>
                     </section>
                   </>

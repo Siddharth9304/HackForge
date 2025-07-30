@@ -8,7 +8,7 @@ const { getDayDifferenceFromDate } = require("../../utils/utils");
 const login = async (req, res) => {
     try {
         // this validator fnctions ensures that req.body will always have mandatory fields, and email is valid
-        await validateDetails.login(req.body);
+        validateDetails.login(req.body);
 
         // this function first checks whether the user with the given email exists
         // If yes, then checks whether the given password is right or wrong
@@ -50,12 +50,7 @@ const login = async (req, res) => {
         } 
 
         // sending cookie
-        res.cookie("token", token, {
-            httpOnly: true,       // cookie not accessible via JS
-            secure: true,         // only sent over HTTPS
-            sameSite: 'None',     // required for cross-site
-            maxAge: 3600000       // 1 hour
-        });
+        res.cookie("token", token, { maxAge: 3600000 });
 
         // sending response with status code
         res.status(201).json(reply);

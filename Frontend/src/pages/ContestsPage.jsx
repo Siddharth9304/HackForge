@@ -4,21 +4,21 @@ import { Trophy } from 'lucide-react';
 
 const now = new Date();
 export const ALL_CONTESTS = [
-    {
-        id: 'c1',
-        name: 'Weekly Contest #345',
-        startTime: new Date(now.getTime() - 1 * 60 * 60 * 1000).toISOString(),
-        endTime: new Date(now.getTime() + 1 * 60 * 60 * 1000).toISOString(),
-        participants: 1284,
-        description: 'A weekly contest featuring one easy, two medium, and one hard problem. Challenge yourself and see where you stand!',
-        rules: ['Contest duration is 90 minutes.', 'Penalties are applied for incorrect submissions.', 'Solutions must be submitted in C++, Java, or Python.'],
-        prizes: ['1st Place: HackForge T-Shirt', 'Top 10: 1000 HackForge Coins', 'Top 100: 100 HackForge Coins'],
-        problemIds: ['p9', 'p6', 'p5', 'p7']
-    },
+    // {
+    //     id: 'c1',
+    //     name: 'Weekly Contest #345',
+    //     startTime: new Date(now.getTime() - 1 * 60 * 60 * 1000).toISOString(),
+    //     endTime: new Date(now.getTime() + 1 * 60 * 60 * 1000).toISOString(),
+    //     participants: 1284,
+    //     description: 'A weekly contest featuring one easy, two medium, and one hard problem. Challenge yourself and see where you stand!',
+    //     rules: ['Contest duration is 90 minutes.', 'Penalties are applied for incorrect submissions.', 'Solutions must be submitted in C++, Java, or Python.'],
+    //     prizes: ['1st Place: HackForge T-Shirt', 'Top 10: 1000 HackForge Coins', 'Top 100: 100 HackForge Coins'],
+    //     problemIds: ['p9', 'p6', 'p5', 'p7']
+    // },
     {
         id: 'c2',
         name: 'Biweekly Contest #102',
-        startTime: new Date(now.getTime() + 2 * 24 * 60 * 60 * 1000).toISOString(),
+        startTime: new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000).toISOString(),
         endTime: new Date(now.getTime() + (2 * 24 * 60 * 60 * 1000) + (2 * 60 * 60 * 1000)).toISOString(),
         participants: 0,
         description: 'Our biweekly contest for all skill levels. A great way to practice under pressure.',
@@ -26,28 +26,28 @@ export const ALL_CONTESTS = [
         prizes: ['Top 20: 500 HackForge Coins'],
         problemIds: ['p1', 'p4', 'p2']
     },
-    {
-        id: 'c4',
-        name: 'Data Structures Challenge',
-        startTime: new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000).toISOString(),
-        endTime: new Date(now.getTime() - (3 * 24 * 60 * 60 * 1000) + (2 * 60 * 60 * 1000)).toISOString(),
-        participants: 892,
-        description: 'A special contest focusing on fundamental and advanced data structures.',
-        rules: ['Contest duration is 2 hours.', 'Submissions are judged on correctness and efficiency.'],
-        prizes: ['1st Place: Premium Subscription (1 Year)', 'Top 50: 250 HackForge Coins'],
-        problemIds: ['p4', 'p10', 'p8']
-    },
-    {
-        id: 'c5',
-        name: 'Algorithm Avengers #4',
-        startTime: new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString(),
-        endTime: new Date(now.getTime() - (7 * 24 * 60 * 60 * 1000) + (2.5 * 60 * 60 * 1000)).toISOString(),
-        participants: 2145,
-        description: 'The ultimate algorithm showdown. Prepare for a mix of dynamic programming, graphs, and more.',
-        rules: ['Contest duration is 2.5 hours.', 'Plagiarism will result in a permanent ban.'],
-        prizes: ['1st Place: Mechanical Keyboard', '2nd Place: $100 Amazon Voucher', '3rd Place: $50 Amazon Voucher'],
-        problemIds: ['p1', 'p5', 'p3', 'p8']
-    },
+    // {
+    //     id: 'c4',
+    //     name: 'Data Structures Challenge',
+    //     startTime: new Date(now.getTime() - 3 * 24 * 60 * 60 * 1000).toISOString(),
+    //     endTime: new Date(now.getTime() - (3 * 24 * 60 * 60 * 1000) + (2 * 60 * 60 * 1000)).toISOString(),
+    //     participants: 892,
+    //     description: 'A special contest focusing on fundamental and advanced data structures.',
+    //     rules: ['Contest duration is 2 hours.', 'Submissions are judged on correctness and efficiency.'],
+    //     prizes: ['1st Place: Premium Subscription (1 Year)', 'Top 50: 250 HackForge Coins'],
+    //     problemIds: ['p4', 'p10', 'p8']
+    // },
+    // {
+    //     id: 'c5',
+    //     name: 'Algorithm Avengers #4',
+    //     startTime: new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString(),
+    //     endTime: new Date(now.getTime() - (7 * 24 * 60 * 60 * 1000) + (2.5 * 60 * 60 * 1000)).toISOString(),
+    //     participants: 2145,
+    //     description: 'The ultimate algorithm showdown. Prepare for a mix of dynamic programming, graphs, and more.',
+    //     rules: ['Contest duration is 2.5 hours.', 'Plagiarism will result in a permanent ban.'],
+    //     prizes: ['1st Place: Mechanical Keyboard', '2nd Place: $100 Amazon Voucher', '3rd Place: $50 Amazon Voucher'],
+    //     problemIds: ['p1', 'p5', 'p3', 'p8']
+    // },
 ];
 
 // helper function
@@ -65,7 +65,7 @@ const getContestStatus = (startTime, endTime) => {
   }
 };
 
-const ContestsPage = ({ onViewContest }) => {
+const ContestsPage = () => {
   const contestsWithStatus = useMemo(() => {
     return ALL_CONTESTS.map((contest) => ({
       ...contest,
@@ -83,8 +83,12 @@ const ContestsPage = ({ onViewContest }) => {
     .filter((c) => c.status === 'ended')
     .reverse();
 
+  const onViewContest = () => {
+    alert("You can view contest details after 2 days.")
+  }
+
   return (
-    <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-30'>
+    <div className='max-w-7xl mx-auto px-4 sm:px-10 lg:px-20 pt-12 pb-30'>
       <div className="text-center mb-12">
         <Trophy className="mx-auto h-12 w-12 text-[#f97316] mb-4" />
         <h1 className="text-3xl md:text-5xl font-extrabold text-[#1e293b] dark:text-[#e2e8f0]">

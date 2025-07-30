@@ -1,12 +1,13 @@
 import React from 'react';
 import { HackForgeLogo } from "..";
+import { NavLink } from 'react-router';
 
 const Footer = () => {
   const footerLinks = [
-    { name: 'About Us', href: '#' },
-    { name: 'Contact', href: '#' },
-    { name: 'Terms of Service', href: '#' },
-    { name: 'Privacy Policy', href: '#' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Contact', href: '/contact-us' },
+    // { name: 'Terms of Service', href: '/' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
   ];
 
   const socialLinks = [
@@ -34,9 +35,9 @@ const Footer = () => {
             <ul role="list" className="mt-4 space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-base text-slate-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors">
+                  <NavLink to={link.href} className="text-base text-slate-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors">
                     {link.name}
-                  </a>
+                  </NavLink>
                 </li>
               ))}
             </ul>

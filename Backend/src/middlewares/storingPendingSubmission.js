@@ -3,6 +3,14 @@ const User = require("../models/users");
 const mongoose = require("mongoose");
 const judge0 = require("../judge0/judge0");
 
+const createFullUserSolution = (userSolution, language, starterCode) => {
+    const sc = starterCode.find((sc) => sc.language === language);
+
+    const fullUserSolution = (sc.headerCode || "") + "\n" + userSolution + "\n" + (sc.mainCode || "") 
+
+    return fullUserSolution;
+}
+
 const storingPendingSubmission = async (req, res, next) => {
   const userId = req.payload._id;
   const { problemId } = req.params;
@@ -14,9 +22,12 @@ const storingPendingSubmission = async (req, res, next) => {
     return res.status(400).send("Missing required fields");
 
   try {
+    // adding header and mainCode to userSolution
+    const fullUserSolution = createFullUserSolution(submittedCode, language, problem.starterCode);
+
     // 1. Submitting user's code to Judge0 for evaluation
     const submissionResult = await judge0.submitUserSolution(
-      submittedCode,
+      fullUserSolution,
       language,
       problem.hiddenTestCases
     );

@@ -14,7 +14,7 @@ const register = async (req, res) => {
         this validator fnctions ensures that req.body will always have mandatory fields,
         as well as email is in proper format and password is strong 
         */
-        await validateDetails.register(req.body);
+        validateDetails.register(req.body);
 
         // hashing password
         req.body.password = await password.hash(req.body.password);
@@ -40,12 +40,7 @@ const register = async (req, res) => {
         } 
         
         // sending cookie
-        res.cookie("token", token, {
-            httpOnly: true,       // cookie not accessible via JS
-            secure: true,         // only sent over HTTPS
-            sameSite: 'None',     // required for cross-site
-            maxAge: 3600000       // 1 hour
-        });
+        res.cookie("token", token, { maxAge: 3600000 });
 
         // sending response with status code
         res.status(201).json(reply);
