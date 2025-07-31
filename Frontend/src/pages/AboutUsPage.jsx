@@ -12,7 +12,7 @@ import {
 import { HackForgeLogo } from "../components"
 
 const FeatureCard = ({ icon, title, children }) => (
-  <div className="bg-[#f8fafc] dark:bg-[#1a2332] p-6 rounded-lg border border-[#e2e8f0] dark:border-[#334155] transform hover:-translate-y-1 transition-transform duration-300">
+  <div className="bg-[#f8fafc] dark:bg-[#1a2332] p-7 rounded-lg border border-[#e2e8f0] dark:border-[#334155] transform hover:-translate-y-1 transition-transform duration-300">
     <div className="flex items-center justify-center w-12 h-12 bg-[#f97316]/10 dark:bg-[#f97316]/20 rounded-lg mb-4">
       {icon}
     </div>
