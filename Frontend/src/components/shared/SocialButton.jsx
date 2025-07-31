@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SocialButton = ({ providerName, icon, onClick, className }) => {
+const SocialButton = ({ providerName, icon, onClick, className, action="Sign in" }) => {
   return (
     <button
       type="button"
@@ -17,7 +17,7 @@ const SocialButton = ({ providerName, icon, onClick, className }) => {
                 }`} 
     >
       <span className="mr-2 flex items-center justify-center h-5 w-5">{icon}</span>
-      Sign in with {providerName}
+      {`${action} with ${providerName}`}
     </button>
   );
 };

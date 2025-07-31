@@ -16,7 +16,7 @@ const ProblemHighlights = () => (
           borderColor="border-t-green-500"
           textColor="text-green-500"
           bgColor="bg-green-500"
-          problemsCount={150}
+          problemsCount={9}
         />
         <ProblemHighlightCard 
           title="Medium Gains" 
@@ -24,7 +24,7 @@ const ProblemHighlights = () => (
           borderColor="border-t-yellow-500"
           textColor="text-yellow-500"
           bgColor="bg-yellow-500"
-          problemsCount={250}
+          problemsCount={7}
         />
         <ProblemHighlightCard 
           title="Hardcore Mode" 
@@ -32,7 +32,7 @@ const ProblemHighlights = () => (
           borderColor="border-t-red-500"
           textColor="text-red-500"
           bgColor="bg-red-500"
-          problemsCount={100}
+          problemsCount={6}
         />
       </div>
     </div>

@@ -149,11 +149,13 @@ const SignupPage = () => {
               providerName="Google"
               icon={<GoogleIcon className="h-5 w-5" />}
               onClick={() => handleSocialLogin('google')}
+              action={'Sign up'}
             />
             <SocialButton
               providerName="GitHub"
               icon={<GithubIcon className="h-5 w-5 text-slate-800 dark:text-slate-100" />}
               onClick={() => handleSocialLogin('github')}
+              action={'Sign up'}
             />
             {/* <SocialButton
               providerName="LinkedIn"

@@ -85,7 +85,7 @@ const AccountPage = () => {
   const [profileImageUrl, setProfileImageUrl] = useState(user?.profileImageUrl || '');
   const [isEmailVerified, setIsEmailVerified] = useState(user?.emailVerified);
   const [googleConnected, setGoogleConnected] = useState(false);
-  const [githubConnected, setGithubConnected] = useState(true);
+  const [githubConnected, setGithubConnected] = useState(false);
   const [isVerificationLinkSent, setIsVerificationLinkSent] = useState(false);
   const [loadingEmailVerification, setLoadingEmailVerification] = useState(false);
   const [loadingSaveProfile, setLoadingSaveProfile] = useState(false);
@@ -361,7 +361,7 @@ const AccountPage = () => {
                     {...register('emailId', { required: 'Email cannot be empty' })}
                     className="w-full px-3 py-2 rounded-md focus:ring-orange-500 focus:border-orange-500 sm:text-sm bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600"
                   />
-                  {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>}
+                  {errors.emailId && <p className="mt-1 text-sm text-red-500">{errors.emailId.message}</p>}
                 </>
               ) : (
                 <span>{user?.emailId}</span>
@@ -477,7 +477,7 @@ const AccountPage = () => {
               alert('Disconnect Google clicked');
               setGoogleConnected(false);
             }}
-            connectedEmail={googleConnected ? 'john.doe@gmail.com' : undefined}
+            connectedEmail={googleConnected ? user?.emailId : undefined}
           />
           <ConnectionButton
             serviceName="GitHub"
@@ -491,7 +491,7 @@ const AccountPage = () => {
               alert('Disconnect GitHub clicked');
               setGithubConnected(false);
             }}
-            connectedEmail={githubConnected ? 'johndoe-gh' : undefined}
+            connectedEmail={githubConnected ? user?.username : undefined}
           />
         </div>
       </Section>
@@ -500,6 +500,7 @@ const AccountPage = () => {
       <Section title="Security">
         <div className="space-y-4">
           <button
+            onClick={() => {alert("Service currently unavailable, Please try again later.")}}
             className="w-full sm:w-auto flex items-center justify-center sm:justify-start px-6 py-3 text-sm font-medium rounded-md transition-colors
                              text-slate-700 bg-slate-200 hover:bg-slate-300
                              dark:text-white dark:bg-slate-600 dark:hover:bg-slate-500"
@@ -510,6 +511,7 @@ const AccountPage = () => {
             <h3 className="font-medium text-slate-800 dark:text-slate-100 mb-1">Two-Factor Authentication (2FA)</h3>
             <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">Add an extra layer of security to your account.</p>
             <button
+              onClick={() => {alert("Service currently unavailable, Please try again later.")}}
               className="px-4 py-2 text-sm font-medium rounded-md border transition-colors
                                text-slate-700 border-slate-400 hover:bg-slate-200
                                dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-600"
