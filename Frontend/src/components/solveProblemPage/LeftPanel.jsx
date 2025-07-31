@@ -17,7 +17,6 @@ import BookmarkModal from './BookmarkModal';
 import parse from "html-react-parser";
 import { Heart, Star, Share2, Bot, NotepadText, BookOpenCheck, Lightbulb, FileCheck, Bookmark, BookmarkCheck,  Tag, Lock, List, Sparkles } from 'lucide-react';
 import { NavLink } from 'react-router';
-import AdsenseAd from '../shared/AdsenseAd';
 
 const tabsConfig = [
   { name: 'Description', icon: NotepadText },
@@ -184,7 +183,6 @@ const LeftPanel = ({ problem, submissionResult, showSubmissionResult, setShowSub
                             ))}
                           </ul>
                         </CollapsibleSection>
-                        <AdsenseAd adSlot={"7446670121"}/>
                       </div>
                     </section>
                   </>
