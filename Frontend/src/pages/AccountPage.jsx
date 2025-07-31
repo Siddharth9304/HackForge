@@ -84,7 +84,7 @@ const AccountPage = () => {
   const [isEditingProfile, setIsEditingProfile] = useState(false);
   const [profileImageUrl, setProfileImageUrl] = useState(user?.profileImageUrl || '');
   const [isEmailVerified, setIsEmailVerified] = useState(user?.emailVerified);
-  const [googleConnected, setGoogleConnected] = useState(false);
+  const [googleConnected, setGoogleConnected] = useState(true);
   const [githubConnected, setGithubConnected] = useState(false);
   const [isVerificationLinkSent, setIsVerificationLinkSent] = useState(false);
   const [loadingEmailVerification, setLoadingEmailVerification] = useState(false);
