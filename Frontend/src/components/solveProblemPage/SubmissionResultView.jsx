@@ -8,10 +8,10 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router';
 
 const suggestedProblems = [
-  { id: '684d2d3c2b998a5fc6b2e7b0', title: 'Valid Anagram', difficulty: 'Easy' },
-  { id: '684d23389147d0d05f56f30e', title: 'Valid Parenthesis', difficulty: 'Medium' },
-  { id: '684d287a28858b7428b54d8e', title: 'Maximum Subarray', difficulty: 'Medium' },
-  { id: '687f375dab476e98a5c363e0', title: 'Regular Expression Matching', difficulty: 'Hard' },
+  { title: 'Merge Intervals', id: '6887725d4cb34d9f69ce78f9', difficulty: "Medium"}, 
+  { title: 'Valid Parentheses', id: '688761cd43663e1a8cf61b51', difficulty: "Easy"},
+  { title: 'Maximum Subarray', id: '6887709a4cb34d9f69ce7895', difficulty: "Medium"},
+  { title: 'Word Search', id: '6887917f74233e0069f465ce', difficulty: "Hard"}
 ];
 
 

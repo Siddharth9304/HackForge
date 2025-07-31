@@ -143,7 +143,7 @@ const LeftPanel = ({ problem, submissionResult, showSubmissionResult, setShowSub
                         </ul>
                     </div>
                     <section id='info'>
-                      <div className="my-6 space-y-0">
+                      <div className="mt-5 mb-6 space-y-0">
                         <CollapsibleSection title="Topics" icon={Tag}>
                           <div className="flex flex-wrap gap-2 p-2">
                             {problem.tags.map(topic => (
@@ -178,7 +178,7 @@ const LeftPanel = ({ problem, submissionResult, showSubmissionResult, setShowSub
                         )}
                         <CollapsibleSection title="Similar Questions" icon={List}> 
                             <ul className="space-y-1 p-2">
-                            {[{ title: 'Valid Anagram', id: '684d2d3c2b998a5fc6b2e7b0'}, { title: 'Valid Parentheses', id: '684d23389147d0d05f56f30e'}, { title: 'Maximum Subarray', id: '684d287a28858b7428b54d8e'}, { title: 'Regular Expression Matching', id: '687f375dab476e98a5c363e0'}].map(q => (
+                            {[{ title: 'Merge Intervals', id: '6887725d4cb34d9f69ce78f9' }, { title: 'Valid Parentheses', id: '688761cd43663e1a8cf61b51' }, { title: 'Maximum Subarray', id: '6887709a4cb34d9f69ce7895' }, { title: 'Word Search', id: '6887917f74233e0069f465ce' }].map(q => (
                               <li key={q.id}><NavLink to={`/problems/${q.id}`} className="hover:underline text-orange-500 hover:text-orange-400">{q.title}</NavLink></li>
                             ))}
                           </ul>

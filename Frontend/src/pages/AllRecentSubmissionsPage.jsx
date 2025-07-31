@@ -11,6 +11,7 @@ import {
 import LoadingPage from './LoadingPage';
 import { mapSubmissions } from '../utils/heplerFunctions';
 import axiosClient from '../config/axios';
+import { NavLink } from 'react-router';
 
 let totalPages, totalSubmissions;
 
@@ -151,19 +152,16 @@ const AllRecentSubmissionsPage = ({ onBack }) => {
                         className="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
                       >
                         <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
-                          <span
-                            className="text-sm font-medium text-slate-900 dark:text-white hover:text-[#FF7F00] dark:hover:text-[#FF7F00] transition-colors"
-                            role="button"
-                            tabIndex={0}
-                            onKeyDown={(e) => {
-                              if (e.key === 'Enter' || e.key === ' ') {
-                                // handle click if needed
-                              }
-                            }}
-                            aria-label={`View details for submission: ${submission.problemName}`}
-                          >
-                            {submission.problemName}
-                          </span>
+                          <NavLink to={`/problems/${submission.problemId}`}>
+                            <span
+                              className="text-sm font-medium text-slate-900 dark:text-white hover:text-[#FF7F00] dark:hover:text-[#FF7F00] transition-colors"
+                              role="button"
+                              tabIndex={0}
+                              aria-label={`View details for submission: ${submission.problemName}`}
+                            >
+                              {submission.problemName}
+                            </span>
+                          </NavLink>
                         </td>
                         <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center space-x-2">

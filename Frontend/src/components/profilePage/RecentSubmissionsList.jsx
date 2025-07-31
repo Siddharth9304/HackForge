@@ -1,4 +1,5 @@
 import { CheckCircleIcon, XCircleIcon, ClockIconMini, ExclamationCircleIcon, ExclamationTriangleIcon } from '../Icons/ProfilePageIcons';
+import { NavLink } from 'react-router';
 
 const SubmissionStatusIcon = ({ status }) => {
   switch (status) {
@@ -53,9 +54,11 @@ const RecentSubmissionsList = ({ submissions, onViewAll }) => {
                 className="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
               >
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm font-medium text-slate-900 dark:text-white">
-                    {submission.problemName}
-                  </div>
+                  <NavLink to={`/problems/${submission.problemId}`}>
+                    <div className="text-sm font-medium text-slate-900 dark:text-white hover:text-[#FF7F00] dark:hover:text-[#FF7F00] transition-colors">
+                      {submission.problemName}
+                    </div>
+                  </NavLink>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center space-x-2">

@@ -1,5 +1,6 @@
 import { CheckCircleIcon } from '../Icons/ProfilePageIcons';
 import { DIFFICULTY_COLORS } from '../../utils/constants';
+import { NavLink } from 'react-router';
 
 const SolvedProblemsList = ({ problems, onViewAll }) => {
   if (problems.length === 0) {
@@ -60,9 +61,11 @@ const SolvedProblemsList = ({ problems, onViewAll }) => {
                   <CheckCircleIcon className="w-5 h-5 text-green-500" />
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm font-medium text-slate-900 dark:text-white">
-                    {problem.title}
-                  </div>
+                  <NavLink to={`/problems/${problem.id}`}>
+                    <div className="text-sm font-medium text-slate-900 dark:text-white hover:text-[#FF7F00] dark:hover:text-[#FF7F00] transition-colors">
+                      {problem.title}
+                    </div>
+                  </NavLink>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span

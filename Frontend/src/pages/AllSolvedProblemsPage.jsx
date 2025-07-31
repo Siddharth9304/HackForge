@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { CheckCircleIcon, ChevronLeftIcon, ChevronRightIcon } from '../components/Icons/ProfilePageIcons';
 import { DIFFICULTY_COLORS } from '../utils/constants';
+import { NavLink } from 'react-router';
 
 const ITEMS_PER_PAGE = 10;
 
@@ -76,9 +77,11 @@ const AllSolvedProblemsPage = ({ problems, onBack }) => {
                           <CheckCircleIcon className="w-5 h-5 text-green-500" />
                         </td>
                         <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm font-medium text-slate-900 dark:text-white">
-                            {problem.title}
-                          </div>
+                          <NavLink to={`/problems/${problem.id}`}>
+                            <div className="text-sm font-medium text-slate-900 dark:text-white hover:text-[#FF7F00] dark:hover:text-[#FF7F00] transition-colors">
+                              {problem.title}
+                            </div>
+                          </NavLink>
                         </td>
                         <td className="px-4 sm:px-6 py-4 whitespace-nowrap">
                           <span
