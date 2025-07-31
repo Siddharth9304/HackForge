@@ -35,7 +35,7 @@ export const LoginPage = () => {
   };
   
   const handleSocialLogin = (provider) => {
-    window.location.href = `${import.meta.env.VITE_BACKEND_BASE_URL}/authentication/${provider}`;
+    window.location.href = `${import.meta.env.VITE_API_URL || import.meta.env.VITE_BACKEND_BASE_URL}/authentication/${provider}`;
   };
 
   return (
