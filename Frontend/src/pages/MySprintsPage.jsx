@@ -40,9 +40,9 @@ const MySprintsPage = () => {
               Organize your bookmarked problems into public or private collections.
             </p>
           </div>
-          <button className="bg-[#f97316] text-white font-medium px-5 py-2.5 rounded-lg text-sm hover:opacity-90 transition-opacity whitespace-nowrap">
+          {/* <button className="bg-[#f97316] text-white font-medium px-5 py-2.5 rounded-lg text-sm hover:opacity-90 transition-opacity whitespace-nowrap">
             Create Sprint
-          </button>
+          </button> */}
         </div>
 
         <div className="mt-10">

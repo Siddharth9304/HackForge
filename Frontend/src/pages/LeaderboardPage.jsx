@@ -43,7 +43,7 @@ const LeaderboardPage = () => {
         totalPages = Math.ceil(usersCountData.data.totalUsers / USERS_PER_PAGE);
         myProfile = leaderboardData.data.user;
         myProfile.profileImageUrl = myProfile.profileImageUrl || "https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg";
-        const leaderboard = generateMappedLeaderboard(leaderboardData.data.leaderboard);
+        const leaderboard = generateMappedLeaderboard(leaderboardData.data.leaderboard, currentPage);
         setSelectedLeaderboardUser(mapUserInfo(myProfile));
         setLeaderboard(leaderboard);
         setLoading(false);
@@ -84,7 +84,7 @@ const LeaderboardPage = () => {
     try {
 
         const { data } = await axiosClient.get(`/profile/leaderboard?page=${currentPage + 1}`);
-        const leaderboard = generateMappedLeaderboard(data.leaderboard);
+        const leaderboard = generateMappedLeaderboard(data.leaderboard, currentPage+1);
         setCurrentPage(currentPage+1);
         setLeaderboard(leaderboard);
 
@@ -102,7 +102,7 @@ const LeaderboardPage = () => {
     try {
 
         const { data } = await axiosClient.get(`/profile/leaderboard?page=${currentPage - 1}`);
-        const leaderboard = generateMappedLeaderboard(data.leaderboard);
+        const leaderboard = generateMappedLeaderboard(data.leaderboard, currentPage-1);
         setCurrentPage(currentPage-1);
         setLeaderboard(leaderboard);
 

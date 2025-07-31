@@ -355,13 +355,13 @@ export const deepCopy = (value) => {
   return JSON.parse(JSON.stringify(value));
 };
 
-export const generateMappedLeaderboard = (leaderboard) => {
+export const generateMappedLeaderboard = (leaderboard, pageNo) => {
 
   return leaderboard.map((user, index) => {
 
     return({
       id: user._id,
-      rank: index+1,
+      rank: (pageNo-1)*10 + index+1,
       username: user.username,
       avatarUrl: user.profileImageUrl || "https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg",
       codingPoints: user.points || 0,

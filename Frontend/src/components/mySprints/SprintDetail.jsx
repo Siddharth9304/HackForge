@@ -88,9 +88,9 @@ const SprintDetail = () => {
             <span>{sprint.isPublic ? 'Public' : 'Private'}</span>
           </span>
         </div>
-        <button className="bg-[#f97316] text-white font-medium px-6 py-2.5 rounded-lg text-sm hover:opacity-90 transition-opacity whitespace-nowrap">
+        {/* <button className="bg-[#f97316] text-white font-medium px-6 py-2.5 rounded-lg text-sm hover:opacity-90 transition-opacity whitespace-nowrap">
           Start Sprint
-        </button>
+        </button> */}
       </div>
       <p className="text-lg text-[#475569] dark:text-[#94a3b8] mb-10 max-w-3xl">
         {sprint.description}
