@@ -4,7 +4,7 @@ import axiosClient from '../config/axios';
 import { useParams, useNavigate, useOutletContext } from "react-router";
 import { ListIcon } from '../components/Icons/SolveProblemPageIcons'; 
 import { LoadingPage } from "../pages";
-import { Maximize2, Minimize2, Moon, Sun, ChevronDown, Timer } from 'lucide-react';
+import { Maximize2, Minimize2, Moon, Sun, ChevronDown } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSelector } from 'react-redux';

@@ -114,7 +114,7 @@ const Timer = ({isTimerRunning, setIsTimerRunning}) => {
         {/* Show tiny buttons only if started */}
         {hasStarted && isTimerRunning && (
           <button
-            onClick={() => setIsRunning(false)}
+            onClick={() => setIsTimerRunning(false)}
             title="Pause"
             className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
           >
@@ -124,7 +124,7 @@ const Timer = ({isTimerRunning, setIsTimerRunning}) => {
 
         {hasStarted && !isTimerRunning && (
           <button
-            onClick={() => setIsRunning(true)}
+            onClick={() => setIsTimerRunning(true)}
             title="Resume"
             className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
           >
